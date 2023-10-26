@@ -18,48 +18,48 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <header class="header-section">
-      <div class="header-container">
-        <nav class="nav-container">
-          <a href="index.html" class="logo-section">
-            <p><span>Web</span>Studio</p>
-          </a>
-          <div class="main-navigation pages">
-            <ul>
-              <li>
-                <a href="index.html" class="nav-section current">Studio</a>
-              </li>
-              <li>
-                <a href="portofolio.html" class="nav-section">Portfolio</a>
-              </li>
-              <li><a href="#contacts" class="nav-section">Contacts</a></li>
-            </ul>
-          </div>
-        </nav>
-
-        <div class="contacts-section">
+    <header class="header-section max-width">
+      <a href="index.html" class="logo-section">
+        <p><span>Web</span>Studio</p>
+      </a>
+      <nav class="nav-container">
+        <div class="main-navigation pages">
           <ul>
             <li>
-              <a href="mailto:info@devstudio.com" class="email-section">
-                <svg class="contacts-section-icon">
-                  <use
-                    href="./images/symbol-defs.svg#icon-envelope-hover"
-                  ></use>
-                </svg>
-                <span>info@devstudio.com</span>
-              </a>
+              <a href="index.html" class="nav-section current">Studio</a>
             </li>
             <li>
-              <a href="tel:+1212-772-4150" class="telephone-section">
-                <svg class="contacts-section-icon">
-                  <use href="./images/symbol-defs.svg#icon-smartphone"></use>
-                </svg>
-                <span>+1 212-772-4150</span>
-              </a>
+              <a href="portofolio.html" class="nav-section">Portfolio</a>
             </li>
+            <li><a href="#contacts" class="nav-section">Contacts</a></li>
           </ul>
         </div>
+      </nav>
+
+      <div class="contacts-section">
+        <ul>
+          <li>
+            <a href="mailto:info@devstudio.com" class="email-section">
+              <svg class="contacts-section-icon">
+                <use href="./images/symbol-defs.svg#icon-envelope-hover"></use>
+              </svg>
+              <span>info@devstudio.com</span>
+            </a>
+          </li>
+          <li>
+            <a href="tel:+1212-772-4150" class="telephone-section">
+              <svg class="contacts-section-icon">
+                <use href="./images/symbol-defs.svg#icon-smartphone"></use>
+              </svg>
+              <span>+1 212-772-4150</span>
+            </a>
+          </li>
+        </ul>
       </div>
+
+      <svg class="icon-menu">
+        <use href="./images/symbol-defs.svg#icon-menu_40px"></use>
+      </svg>
     </header>
 
     <main>
@@ -67,8 +67,7 @@
         <div class="effective-solutions-gradient">
           <div class="effective-solutions-section-container">
             <h1 class="effective-solutions-title">
-              EFFECTIVE SOLUTIONS FOR <br />
-              YOUR BUSINESS
+              EFFECTIVE SOLUTIONS FOR YOUR BUSINESS
             </h1>
             <button
               type="button"
@@ -81,7 +80,7 @@
         </div>
       </section>
 
-      <section class="what-we-do-section">
+      <section class="what-we-do-section default-padding-mobile">
         <div class="what-we-do-text-section-container">
           <ul class="what-we-do-text-section">
             <li>
@@ -177,16 +176,44 @@
         </div>
       </section>
 
-      <section class="our-team-section">
+      <section class="our-team-section default-padding-mobile">
         <h2 class="section-title">Our team</h2>
         <div class="our-team-cards-container">
           <ul class="our-team-cards-section">
             <li>
-              <img
-                src="./images/team-member-1.jpg"
-                alt="First team member"
-                width="270"
+              <picture>
+                <!-- Desktop -->
+                <source
+                  media="(min-width: 1158px)"
+                  srcset="
+                    ./images/team-member-1-d.jpg   1x,
+                    ./imagesteam-member-1-d-2x.jpg 2x
+                  "
+                />
+
+                <!-- Tablet -->
+                <source
+                media="(min-width: 768px)"
+                srcset="
+                  ./images/team-member-1-t.jpg   1x,
+                  ./imagesteam-member-1-t-2x.jpg 2x
+                "
               />
+
+                <!-- Mobile -->
+
+                <source
+                srcset="
+                  ./images/team-member-1-m.jpg   1x,
+                  ./imagesteam-member-1-m-2x.jpg 2x
+                "
+              />
+
+                <img
+                  src="./images/team-member-1-d.jpg"
+                  alt="First team member"
+                />
+              </picture>
               <h3>Christopher Walker</h3>
               <p>Product Designer</p>
               <div class="cards-icons-container">
@@ -213,11 +240,39 @@
               </div>
             </li>
             <li>
-              <img
-                src="./images/team-member-2.jpg"
-                alt="Second team member"
-                width="270"
+              <picture>
+                <!-- Desktop -->
+                <source
+                  media="(min-width: 1158px)"
+                  srcset="
+                    ./images/team-member-2-d.jpg   1x,
+                    ./imagesteam-member-2-d-2x.jpg 2x
+                  "
+                />
+
+                <!-- Tablet -->
+                <source
+                media="(min-width: 768px)"
+                srcset="
+                  ./images/team-member-2-t.jpg   1x,
+                  ./imagesteam-member-2-t-2x.jpg 2x
+                "
               />
+
+                <!-- Mobile -->
+
+                <source
+                srcset="
+                  ./images/team-member-2-m.jpg   1x,
+                  ./imagesteam-member-2-m-2x.jpg 2x
+                "
+              />
+
+                <img
+                  src="./images/team-member-2-d.jpg"
+                  alt="First team member"
+                />
+              </picture>
               <h3>Kylie Evans</h3>
               <p>Frontend Developer</p>
               <div class="cards-icons-container">
@@ -244,11 +299,39 @@
               </div>
             </li>
             <li>
-              <img
-                src="./images/team-member-3.jpg"
-                alt="Third team member"
-                width="270"
+              <picture>
+                <!-- Desktop -->
+                <source
+                  media="(min-width: 1158px)"
+                  srcset="
+                    ./images/team-member-3-d.jpg   1x,
+                    ./imagesteam-member-3-d-2x.jpg 2x
+                  "
+                />
+
+                <!-- Tablet -->
+                <source
+                media="(min-width: 768px)"
+                srcset="
+                  ./images/team-member-3-t.jpg   1x,
+                  ./imagesteam-member-3-t-2x.jpg 2x
+                "
               />
+
+                <!-- Mobile -->
+
+                <source
+                srcset="
+                  ./images/team-member-3-m.jpg   1x,
+                  ./imagesteam-member-3-m-2x.jpg 2x
+                "
+              />
+
+                <img
+                  src="./images/team-member-3-d.jpg"
+                  alt="First team member"
+                />
+              </picture>
               <h3>Ryan Harris</h3>
               <p>Marketing</p>
               <div class="cards-icons-container">
@@ -275,11 +358,39 @@
               </div>
             </li>
             <li>
-              <img
-                src="./images/team-member-4.jpg"
-                alt="Fourth team member"
-                width="270"
+              <picture>
+                <!-- Desktop -->
+                <source
+                  media="(min-width: 1158px)"
+                  srcset="
+                    ./images/team-member-4-d.jpg   1x,
+                    ./imagesteam-member-4-d-2x.jpg 2x
+                  "
+                />
+
+                <!-- Tablet -->
+                <source
+                media="(min-width: 768px)"
+                srcset="
+                  ./images/team-member-4-t.jpg   1x,
+                  ./imagesteam-member-4-t-2x.jpg 2x
+                "
               />
+
+                <!-- Mobile -->
+
+                <source
+                srcset="
+                  ./images/team-member-4-m.jpg   1x,
+                  ./imagesteam-member-4-m-2x.jpg 2x
+                "
+              />
+
+                <img
+                  src="./images/team-member-4-d.jpg"
+                  alt="First team member"
+                />
+              </picture>
               <h3>Tyler Moore</h3>
               <p>UI Designer</p>
               <div class="cards-icons-container">
@@ -309,7 +420,7 @@
         </div>
       </section>
 
-      <section class="regular-costumers-section">
+      <section class="regular-costumers-section default-padding-mobile">
         <h2 class="section-title">Regular costumers</h2>
         <ul class="regular-costumers-section-main">
           <li>
@@ -426,11 +537,20 @@
           <form class="footer-form-container" action="" method="get">
             <label for="email"></label>
             <div>
-              <input class="footer-email-box" type="email" id="email" placeholder="E-mail">
+              <input
+                class="footer-email-box"
+                type="email"
+                id="email"
+                placeholder="E-mail"
+              />
             </div>
-  
+
             <div class="footer-subscribe-button-container">
-              <input class="footer-subscribe-button" type="submit" value="Subscribe">
+              <input
+                class="footer-subscribe-button"
+                type="submit"
+                value="Subscribe"
+              />
               <svg class="footer-subscribe-button-icon">
                 <use href="./images/symbol-defs.svg#icon-icon-send"></use>
               </svg>
@@ -523,9 +643,9 @@
                   <use href="./images/symbol-defs.svg#icon-unchecked"></use>
                 </svg>
                 <span
-                >I agree with the letter and accept the
-                <a href="#">Terms and Conditions</a>
-              </span>
+                  >I agree with the letter and accept the
+                  <a href="#">Terms and Conditions</a>
+                </span>
               </label>
             </div>
 

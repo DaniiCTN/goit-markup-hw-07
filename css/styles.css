@@ -21,6 +21,8 @@ ul {
   --button-color: #2196f3;
   --our-team-section-background-color: #f5f4fa;
   --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --desktop-max-width: 1170px;
+  --tablet-max-width: 738px;
 }
 
 /* Header section */
@@ -30,12 +32,12 @@ ul {
   align-items: center;
   justify-content: space-between;
   height: 80px;
+  padding: 0 15px;
 }
 
 .header-container {
-  width: 1200px;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 15px;
   display: flex;
 }
 
@@ -72,14 +74,7 @@ ul {
 }
 
 .header-section .main-navigation ul {
-  align-items: center;
-  gap: 50px;
-  justify-content: space-between;
-  display: flex;
-}
-
-.pages ul {
-  margin-right: 300px;
+  display: none;
 }
 
 .nav-section {
@@ -105,16 +100,8 @@ ul {
   border-radius: 2px;
 }
 
-.header-section .contacts-section {
-  align-items: center;
-  gap: 40px;
-  justify-content: space-between;
-  display: flex;
-}
-
 .contacts-section ul {
-  display: flex;
-  gap: 40px;
+  display: none;
 }
 
 .contacts-section a {
@@ -154,14 +141,26 @@ ul {
   height: 16px;
   fill: #757575;
 }
+
+.icon-menu {
+  width: 40px;
+  height: 40px;
+}
 /* Main Section */
+
+.default-padding-mobile {
+  padding: 0 15px;
+}
 
 .effective-solutions-section {
   background-image: linear-gradient(
       rgba(47, 48, 58, 0.4),
       rgba(47, 48, 58, 0.4)
     ),
-    url(../images/background-image.jpg);
+    url(../images/background-image-m.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   width: 100%;
   height: 600px;
   display: flex;
@@ -176,12 +175,13 @@ ul {
 }
 
 .effective-solutions-title {
+  width: 360px;
   color: #fff;
   text-align: center;
-  font-size: 44px;
+  font-size: 26px;
   font-style: normal;
   font-weight: 900;
-  line-height: 60px;
+  line-height: 42px;
   letter-spacing: 2.64px;
   text-transform: uppercase;
 }
@@ -210,10 +210,6 @@ ul {
 }
 
 /* What we do section */
-.what-we-do-section {
-  height: 919px;
-  padding: 94px 0px;
-}
 
 .what-we-do-text-section h3 {
   color: var(--title-color);
@@ -232,11 +228,23 @@ ul {
 
 .what-we-do-text-section-container ul {
   display: flex;
+  flex-direction: column;
   gap: 30px;
+  padding: 0;
+  width: 452px;
+}
+
+.what-we-do-text-section-container ul li {
+  width: 450px;
+  height: 226px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .paragraph-icons-container {
-  width: 270px;
+  width: 450px;
   height: 120px;
   display: flex;
   justify-content: center;
@@ -250,10 +258,6 @@ ul {
   height: 70px;
 }
 
-.what-we-do-text-section li {
-  width: 270px;
-}
-
 .what-we-do-text-section p {
   color: var(--paragraph-contacts-color);
   font-size: 14px;
@@ -263,6 +267,9 @@ ul {
   letter-spacing: 0.42px;
 }
 
+.what-we-do-section-container {
+  display: none;
+}
 .what-we-do-images {
   position: relative;
   width: 370px;
@@ -313,19 +320,27 @@ ul {
 }
 /* Our team section */
 
-.our-team-cards-section {
+.our-team-cards-container {
   display: flex;
+  justify-content: center;
+}
+
+.our-team-cards-section {
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   gap: 30px;
 }
 
 .our-team-section {
   background-color: var(--our-team-section-background-color);
-  height: 708px;
   padding: 94px 0px;
 }
 
 .our-team-section li {
+  width: 450px;
+  height: 622px;
   background-color: var(--background-color-1);
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
@@ -390,7 +405,6 @@ ul {
 /* Regular costumers section */
 
 .regular-costumers-section {
-  height: 372px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -399,13 +413,17 @@ ul {
 
 .regular-costumers-section-main {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
+  padding: 0;
+  width: 452px;
 }
 
 .regular-costumers-logo-container {
-  width: 170px;
+  width: 210px;
   height: 92px;
+  padding: 0;
   border-radius: 4px;
   border: 1px solid #afb1b8;
   display: flex;
@@ -437,6 +455,7 @@ ul {
 .footer-section {
   background-color: var(--background-color-2);
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
@@ -986,4 +1005,197 @@ ul {
   border-radius: 4px;
   background: #188ce8;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+/* Media section */
+
+/* Tablet */
+
+@media screen and (min-width: 768px) {
+  .max-width {
+    max-width: var(--tablet-max-width);
+  }
+
+  .header-section .main-navigation ul {
+    align-items: center;
+    gap: 50px;
+    justify-content: space-between;
+    display: flex;
+  }
+
+  .header-section .contacts-section {
+    display: flex;
+    justify-content: center;
+  }
+
+  .header-section .contacts-section ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+  .icon-menu {
+    display: none;
+  }
+
+  /* Effective solution section */
+
+  .effective-solutions-section {
+    background-image: linear-gradient(
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url(../images/background-image-t.jpg);
+    background-size: cover;
+  }
+
+  /* What we do section */
+
+  .what-we-do-text-section-container ul {
+    width: 738px;
+    height: 507px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .what-we-do-text-section-container ul li {
+    width: 354px;
+    height: 251px;
+    display: block;
+  }
+
+  .paragraph-icons-container {
+    width: 354px;
+    height: 120px;
+  }
+
+  /* Our team section */
+
+  .our-team-cards-section {
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0;
+    width: 740px;
+  }
+
+  .our-team-section li {
+    width: 354px;
+    height: 536px;
+  }
+
+  /* Regular costumers */
+
+  .regular-costumers-section-main {
+    width: 744px;
+  }
+
+  .regular-costumers-logo-container {
+    width: 226px;
+  }
+}
+
+/* Desktop */
+
+@media screen and (min-width: 1158px) {
+  .max-width {
+    max-width: var(--desktop-max-width);
+  }
+
+  .header-section {
+    padding: 0 215px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .header-section .main-navigation ul {
+    align-items: center;
+    gap: 50px;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .header-section .contacts-section {
+    align-items: center;
+  }
+
+  .header-section .contacts-section ul {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .nav-container {
+    margin-left: 93px;
+    margin-right: 339px;
+  }
+
+  /* Effective solution section */
+
+  .effective-solutions-section {
+    background-image: linear-gradient(
+        rgba(47, 48, 58, 0.4),
+        rgba(47, 48, 58, 0.4)
+      ),
+      url(../images/background-image-d.jpg);
+    background-size: cover;
+  }
+
+  .effective-solutions-title {
+    width: 696px;
+    font-size: 44px;
+    line-height: 40px;
+  }
+
+  /* What we do section */
+
+  .what-we-do-section {
+    padding: 94px 0px;
+  }
+
+  .what-we-do-text-section-container {
+    height: 251px;
+  }
+
+  .what-we-do-text-section-container ul {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .what-we-do-text-section-container ul li {
+    width: 270px;
+    height: 251px;
+  }
+
+  .what-we-do-section-container {
+    display: block;
+  }
+
+  .paragraph-icons-container {
+    width: 270px;
+    height: 120px;
+  }
+
+  /* Our team section */
+
+  .our-team-section li {
+    width: 270px;
+    height: 428px;
+  }
+
+  .our-team-cards-section {
+    flex-wrap: nowrap;
+  }
+
+  /* Regular costumers */
+
+  .regular-costumers-section-main {
+    width: 100%;
+    flex-wrap: nowrap;
+  }
+
+  .regular-costumers-logo-container {
+    width: 170px;
+  }
 }
